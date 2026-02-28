@@ -1,15 +1,14 @@
 # Program functions
 def get_string_only(prompt: str, title: str) -> str:
     while True:
-        user_name = input(prompt).strip()
+        value = input(prompt).strip()
         try:
-            int(user_name)
+            float(value)
             print("-----------------------------------")
             print(f"❌ {title} should be text!")
             print("-----------------------------------")
-
         except ValueError:
-            return user_name
+            return value
 
 def get_positive_number(prompt: str, title: str) -> float:
     """Ask for input until a positive number is received."""
@@ -41,7 +40,7 @@ def calculate_remaining_budget(income: float, total_expenses: float) -> float:
 
 
 def print_budget_summary(name: str, category: str, income: float,
-                         expenses: list[float], remaining: float):
+                         expenses: float, remaining: float):
     # Your code here - make it look nice!
     print("_______________________________")
     print(f"| Budget Summary For {name}  📊|")
