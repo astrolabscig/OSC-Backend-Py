@@ -2,13 +2,20 @@
 def get_string_only(prompt: str, title: str) -> str:
     while True:
         value = input(prompt).strip()
-        try:
-            float(value)
-            print("-----------------------------------")
-            print(f"❌ {title} should be text!")
-            print("-----------------------------------")
-        except ValueError:
+        if value.isalpha():
             return value
+        else:
+            print("-----------------------------------")
+            print(f"❌ {title} should be text only!")
+            print("-----------------------------------")
+
+        # try:
+        #     float(value)
+        #     print("-----------------------------------")
+        #     print(f"❌ {title} should be text!")
+        #     print("-----------------------------------")
+        # except ValueError:
+        #     return value
 
 def get_positive_number(prompt: str, title: str) -> float:
     """Ask for input until a positive number is received."""
