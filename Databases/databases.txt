@@ -1,0 +1,50 @@
+Relational --> postgresql
+Non-Relational --> Mongodb
+
+Json
+{
+    "id": 1,
+    "username": "Joe",
+    "email": "astrolabscig@gmail.com",
+    "is_active": true,
+    "created_at": "..."
+}
+this is called a "Collection" is Non-Relational
+and "Row" in Relational database
+
+RELATIONAL DATABASE - postgresql
+4 main categories of datatypes
+1. Numeric
+2. Text
+3. Boolean
+4. Data/time
+5. JSON
+
+datatypes for:
+Numeric
+1. Serial: Auto-increment
+2. Integer/int: Age
+3. Bigint: (stores large integer)
+
+Text
+1. VARCHAR(n): Names, user_names
+----> VARCHAR(60) --- Maximum should be 60 char
+2. Text: Large descriptions or notes
+
+Date&Time
+TIMESTAMP: created_at/updated_at
+Date: Birthdates, deadlines
+
+Boolean
+Boolean: True/False
+
+Terminologies
+Table 
+Row/tuple/record -> single entry in a table 
+Column -> vertical field in the table | column header -> attribute
+Schema -> blueprint of the database
+
+Data Integrity
+1. Primary Key: unique and cannot repeat itself  ---- You cannot have 
+more than one primary key in a table
+2. Foreign Key: a primary key from another table

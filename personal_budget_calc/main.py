@@ -1,5 +1,5 @@
 # Program functions
-def get_string_only(prompt: str, title: str) -> str:
+def get_text_only(prompt: str, title: str) -> str:
     while True:
         value = input(prompt).strip()
         if value.isalpha():
@@ -22,14 +22,17 @@ def get_positive_number(prompt: str, title: str) -> float:
     while True:
         try:
             value = float(input(prompt))
-            if value <= 0:
-                print("----------------------------------")
-                raise ValueError("Value must be positive!")
-            return value
         except ValueError:
             print("----------------------------------------------------------------------------")
             print(f"❌Error: {title} should be a valid amount (Eg GH₵200). Please try again.")
             print("----------------------------------------------------------------------------")
+            continue
+        if value <= 0:
+            print("------------------------------")
+            print(f"❌Value must be positive!")
+            print("------------------------------")
+            continue
+        return value        
 
 
 def calculate_total_expenses(expenses: list[float]) -> float:
@@ -70,12 +73,12 @@ if __name__ == "__main__":
     print("Welcome to Personal Budget Calculator!💸\n")
 
     # Get user name (simple input, no validation needed)
-    user_name = get_string_only("What is your name? ", "Name")
+    user_name = get_text_only("What is your name? ", "Name")
     print(f"Hello {user_name}!👋😁")
     # Get income using safe function
     monthly_income = get_positive_number("Enter your monthly income(GH₵): ", "Monthly income")
     # Get category
-    budget_category = get_string_only("What is the budget category? ", "Budget Category")
+    budget_category = get_text_only("What is the budget category? ", "Budget Category")
     # Get 3 expenses using loop + safe function
     expenses = []
     count = 0
